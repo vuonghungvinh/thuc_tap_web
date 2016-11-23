@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	{% load staticfiles %}
+	<title>Welcome my travel web</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="{% static 'css/stylephong.css' %}" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="{% static 'css/style01.css' %}" rel="stylesheet">
+	<link href="{% static 'css/media.css' %}" rel="stylesheet">
+	{% block top %}{% endblock %}
+
+</head>
+<body>
+ 	<div id="header">
+ 		<div class="container">
+ 			<div id="top_Area">
+	 			<div id="left_Area">
+	 				<h3>Welcome to the new travel site</h3>
+	 			</div>
+	 			<div id="right_Area">
+	 				<span id="follow_Us">FOLLOW US </span>
+	 				<ul class="social">
+	 					<li>
+	 						<a href="https://www.facebook.com/NhatNguyenIT"><img src="/media/static/facebook-logo.png" height="20" width="20"></a>
+	 					</li>
+	 					<li>
+	 						<a href="https://www.youtube.com/channel/UCu_h9ZMAS1cn6tszi4Ll7JA"><img src="/media/static/youtube-web-logo.png" height="20" width="20">
+	 					</li>
+	 					<li>
+	 						<a href=""><img src="/media/static/twitter.png" height="20" width="20"></a>
+	 					</li>
+	 					<li>
+	 						<img src="/media/static/black-envelope.png" height="20" width="20"></a>
+	 					</li>
+	 				</ul>
+	 			</div>
+ 			</div>
+ 		</div>
+ 	</div>
+
+ 	<div id="logo_area">
+ 		<div class="container">
+ 			<div id="wrap_logo">
+ 				<div id="left_logo">
+ 					<a href=""><img src="/media/static/logo1.png" alt="logo" height="74px" width="210px"></a>
+ 				</div>
+
+ 				<div id="right_logo">
+						<div class="row">
+							<div class="col-md-12 col-sm-12 col-xs-12 content">
+								<ul class="login_join_us">
+							    	<li class="leaf"><a href="/user/login" class="login-reveal-modal-button">Log In</a></li>
+							    	<li class="between">|</a></li>
+									<li class="last_leaf"><a href="/about-us/join-us">Join Us</a></li>
+									<li class="seach_tab form-group">
+										<input type="text" class="search-query" placeholder="Search">
+						                <button type="submit" class="btn"><i class="glyphicon glyphicon-search"></i></button>
+									</li>
+								</ul> 
+							</div>
+						</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+
+ 	{% block main %}{% endblock %}
+
+	<div class="nhat">
+<hr class="featurette-divider">
+<div id="container footer">
+    <div class="container">
+        <div class="row">
+            <h3 class="footertext">About Us</h3>
+            <br>
+              <div class="col-md-4">
+                <center>
+                  <img src="http://oi60.tinypic.com/w8lycl.jpg" class="img-circle" alt="the-brains">
+                  <br>
+                  <h4 class="footertext">Programmer</h4>
+                  <p class="footertext">You can thank all the crazy programming here to this guy.<br>
+                </center>
+              </div>
+              <div class="col-md-4">
+                <center>
+                  <img src="http://oi60.tinypic.com/2z7enpc.jpg" class="img-circle" alt="...">
+                  <br>
+                  <h4 class="footertext">Artist</h4>
+                  <p class="footertext">All the images here are hand drawn by this man.<br>
+                </center>
+              </div>
+              <div class="col-md-4">
+                <center>
+                  <img src="http://oi61.tinypic.com/307n6ux.jpg" class="img-circle" alt="...">
+                  <br>
+                  <h4 class="footertext">Designer</h4>
+                  <p class="footertext">This pretty site and the copy it holds are all thanks to this guy.<br>
+                </center>
+              </div>
+            </div>
+            <div class="row">
+            <p><center><a href="#">Contact Stuff Here</a> <p class="footertext">Copyright 2016</p></center></p>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+

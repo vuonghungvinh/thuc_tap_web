@@ -1,0 +1,250 @@
+#header{
+	background-image: url(images/bg-hd2.png);
+	background-size: contain;
+	margin: 0px auto;
+	border: 1px solid grey;
+	width: 100%;
+}
+#logo_area{
+	margin-bottom: 10px;
+}
+#header #top_Area{
+	height: 100%;
+	margin: 0 auto;
+}
+#header #left_Area{
+	float: left;
+	width: 330px;
+	margin: 0px auto;
+}
+#header #left_Area h3{
+	margin: 0px;
+	font-family: initial;
+	color: #FFCC00;
+	line-height: 33px;
+	display: inline-block;
+}
+#right_Area{
+	float: right;
+	width: calc(100% - 330px);
+	margin: 0px auto;
+	text-align: right;
+	margin-top: 4px;
+}
+#right_Area #follow_Us{
+	color: #FFCC00;
+	margin-top:  10px;
+	padding-right: 10px;
+}
+#right_Area .social{
+	list-style-type: none;
+	display: inline-block;
+	padding: 0px;
+}
+#right_Area .social li{
+	display: inline-block;
+	padding-right: 10px;
+}
+#right_Area .social li:last-child{
+	padding-right: 0;
+}
+#logo_area #wrap_logo{
+	margin: 0px auto;
+	height: 100%;
+}
+#logo_area .container #wrap_logo #left_logo{
+	margin: auto;
+	text-align: center;
+	float: left;
+	padding: 0;
+	width: 330px;
+	height: 100%;
+}
+#logo_area .container #wrap_logo #right_logo{
+	float: right;
+	height: 100%;
+	margin: auto;
+	width: calc(100% - 330px);
+}
+#logo_area .container #wrap_logo #right_logo .row{
+	    text-align: right;
+}
+.btn{
+	background-color: white;
+}
+#right_logo .row .login_join_us {
+	list-style-type: none;
+	display: inline-block;
+	margin: auto;
+	padding: 5px;
+}
+#right_logo .row ul{
+	text-align: right;
+}
+.login_join_us  li {
+	display: inline-block;
+	padding-right: 5px;
+	padding-top: 5px;
+	color: #337ab7;
+	font-size: medium;
+    font-family: 
+}
+.login_join_us .between{
+	color: #337ab7;
+	font-size: medium;
+    font-family: cursive;
+}
+.login_join_us .leaf{
+	font-size: medium;
+    font-family: cursive;
+}
+.login_join_us .last_leaf{
+	font-size: medium;
+    font-family: cursive;
+}
+.login_join_us .seach_tab{
+	padding-left:  70px;
+}
+
+.form-group input[type="text"]{
+	display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.banner #logo{
+	width: 250px;
+}
+
+.banner .rigth_banner{
+    width: calc(100% - 254px);
+    display: inline-block;
+    text-align: right;
+}
+
+.banner .rigth_banner .join_login{
+	list-style: none;
+    display: inline-block;
+    padding: 0;
+}
+
+.banner .rigth_banner .join_login li{
+	display: inline-block;
+	padding: 10px;
+}
+.banner .rigth_banner .join_login li:first-child{
+    border-right: solid thin #E2E2E2;
+}
+.banner .rigth_banner .join_login li a{
+	color: #0480C8;
+	text-decoration: none;
+}
+
+.banner .rigth_banner .join_login li:hover a{
+	color: #003056;
+}
+.banner .rigth_banner .search{
+	display: inline-block;
+    margin: 0;
+    position: relative;
+}
+.banner .rigth_banner .search input{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+.banner .rigth_banner .search span{
+	position: absolute;
+    right: 4px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.listmenu .navbar ul li a, .listmenu .navbar ul li a span{
+	color: #fff;
+}
+.listmenu .navbar ul li a:hover, .listmenu .navbar ul li a span:hover{
+	color: #fff;
+}
+.listmenu .navbar{
+    background: #2E6DA4;
+    border: none;
+}
+
+.listmenu .navbar-inverse .navbar-toggle .icon-bar{
+	background-color: #000;
+}
+.listmenu .navbar-inverse .navbar-toggle:hover{
+	background-color: transparent;
+}
+
+.listmenu .navbar-inverse .collapse ul li .dropdown-menu{
+	background: #B0C500;
+}
+.listmenu .navbar-inverse .container-fluid .navbar-header .navbar-brand span{
+    color: #B0C500;
+}
+
+.listmenu .navbar-inverse .collapse .navbar-nav{
+	width: calc(100% - 19px);
+}
+
+.listmenu .navbar-inverse .container-fluid .collapse.in ul li:hover{
+	background: #B5AEAE;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+#right_logo .login_join_us .seach_tab{
+	position: relative;
+}
+
+#right_logo .login_join_us .seach_tab .btn{
+    position: absolute;
+    top: 6px;
+    right: 0;
+    background: transparent;
+}
+
+#right_logo .login_join_us .seach_tab .search-query{
+    padding: 6px 22px;
+}
+
+
+div#container footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100%;
+  
+}
+.nhat{
+	 background-image: url(images/img-about.png);
+}
+
+
+
+/* Custom footer CSS
+-------------------------------------------------- */
+
+.container .text-muted {
+  margin: 20px 0;
+}
+.footertext {
+	text-align: center;
+  color: #FFCC00;
+}

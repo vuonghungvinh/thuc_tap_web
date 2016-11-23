@@ -1,0 +1,47 @@
+@media(max-width: 580px){
+	#header #left_Area{
+		width: 100%;
+		text-align: center;
+	}
+	#header #right_Area{
+		width: 100%;
+		text-align: center;
+	}
+}
+@media(max-width: 400px){
+	#header #left_Area h3{
+		font-size: 140%;
+	}
+}
+@media(max-width: 1000px){
+	#right_logo .row ul{
+	text-align: left;
+	float: left;
+   }
+}
+@media(max-width: 640px){
+#left_logo{
+		width: 100%;
+	}
+#right_logo{
+		width: 100%;
+	}
+}
+
+@media(max-width: 620px){
+	#logo_area .container #wrap_logo #left_logo{
+		width: 100%;
+	}
+	#logo_area .container #wrap_logo #right_logo{
+		width: 100%;
+	}
+	#logo_area .container #wrap_logo #right_logo .login_join_us .seach_tab{
+		padding-left: 5px;
+	}
+	#logo_area .container #wrap_logo #right_logo .content{
+		text-align: center;
+	}
+	#logo_area .container #wrap_logo #right_logo .content .login_join_us{
+		float: none;
+	}
+}
