@@ -20,7 +20,9 @@ admin.autodiscover()
 import settings
 
 urlpatterns = [
-	url(r'^', include("index.urls")),
+    url(r'^', include("index.urls")),
+	url(r'^profile/', include("profile.urls")),
+    url(r'^accounts/', include('allauth.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,

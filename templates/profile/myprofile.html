@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block top %}
+{% load static %}
+{% load humanize %}
+{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/myprofile.css' %}">
+{% endblock %}
+{% load templatetag %}
+{% block main %}
+	<div class="container" id="myprofile">
+		<form method="POST" action='{{ action_url }}' class="post-form" enctype='multipart/form-data'>
+			{% csrf_token %}
+			{{ userf.media }}
+	        {{ userf.as_p }}
+	        {{ profilef.as_p }}
+		</form>
+	</div>
+{% endblock %}

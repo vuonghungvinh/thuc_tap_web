@@ -8,12 +8,12 @@ sys.setdefaultencoding('utf-8')
 # Register your models here.
 
 class SliderAdmin(admin.ModelAdmin):
-	flist_display = ('photo', 'title', 'isshow')
+	list_display = ('photo', 'title', 'isshow')
 	list_filter = ('title', 'isshow')
 	search_fields = ('title', 'isshow')
 
 class TourAdmin(admin.ModelAdmin):
-	flist_display = ('name', 'photo', 'cost', 'days', 'is_sale', 'cost_sale', 'date', 'inside')
+	list_display = ('name', 'photo', 'cost', 'days', 'is_sale', 'cost_sale', 'date', 'inside')
 	list_filter = ('days', 'date')
 	search_fields = ('days', 'date')
 

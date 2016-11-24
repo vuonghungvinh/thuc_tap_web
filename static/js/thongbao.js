@@ -28,7 +28,7 @@
 
 
 
- $(window).scroll(function(){
+$(window).scroll(function(){
         // n?u  thanh cu?n >150px thì hi?n thanh di?u hu?ng ?n thanh top
         if($(this).scrollTop()>350){  
         $(".listbox").css({'position':'fixed','width':'26.9%','top':'1px','height':'370px'});
