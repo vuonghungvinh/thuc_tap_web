@@ -45,3 +45,12 @@
 		float: none;
 	}
 }
+
+@media(max-width: 464px){
+	.loginform form.login{
+		width: 100%;
+	}
+	.formsignup .content #signup_form{
+		width: 100%;
+	}
+}
