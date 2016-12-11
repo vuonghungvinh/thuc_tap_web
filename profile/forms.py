@@ -15,9 +15,14 @@ class ImageWidget(forms.FileInput):
 		return mark_safe(u''.join(output))
 
 class MyProfileForm(forms.ModelForm):
+	date = forms.DateField(widget=forms.TextInput(attrs={'class':'datepicker', 'readonly':'true'}))
+	avatar = forms.ImageField(widget=ImageWidget)
 	class Meta:
 		model = UserProfile
 		fields = ('gender', 'date', 'avatar', 'phone', 'address')
+	def __init__(self, *args, **kwargs):
+	    super(MyProfileForm, self).__init__(*args, **kwargs)
+	    self.fields['date'].label = "Date birth"
 
 class UserForm(forms.ModelForm):
 	class Meta:

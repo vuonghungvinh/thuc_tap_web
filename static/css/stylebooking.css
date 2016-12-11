@@ -1,0 +1,27 @@
+.siteDatTour {
+    font-size: 12px;
+    
+}
+.siteDatTour .container {
+    background-color: #ecf0f5;
+}
+.siteDatTour .datTour h1 {
+    color: #003c71;
+    text-align: center;
+    font-weight: bold;
+}
+.siteDatTour h4 {
+    font-size: 20px;
+    color: blue;
+}
+.siteDatTour .table-responsive {
+    border: 1px solid #0fb5ab;
+}
+.siteDatTour hr{
+	border: 1px solid #51ce7d;
+}
+.siteDatTour .tToan button{
+	margin-top: 20px;
+    background: #d48014;
+    margin-bottom: 20px;
+}

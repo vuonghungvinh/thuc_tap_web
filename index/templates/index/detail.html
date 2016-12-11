@@ -59,7 +59,8 @@
             <div class="price1">
                 <div class="gia">Giá: {{detail.tour.cost|intcomma}}đ</div>
                  <div class="dat">
-                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Đặt Tour</button>
+                  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Đặt Tour</button> -->
+                  <a type="button" href="/booking/{{detail.tour_id}}" class="btn btn-info btn-lg">Đặt Tour</a>
         <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">

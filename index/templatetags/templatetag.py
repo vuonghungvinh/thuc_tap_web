@@ -18,3 +18,7 @@ def animate(value):
 		return 100
 	else:
 		return 200
+
+@register.filter
+def percentchild(value, per):
+	return value*per/100

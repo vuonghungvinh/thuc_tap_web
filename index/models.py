@@ -5,6 +5,7 @@ import re
 from datetime import datetime
 import os
 import sys
+from ckeditor_uploader.fields import RichTextUploadingField
 reload(sys)
 sys.setdefaultencoding('utf-8')
 # Create your models here.
@@ -49,6 +50,10 @@ class Tours(models.Model):
 	cost_sale = models.FloatField(default=0, null=True, blank=True)
 	date = models.DateField(null=True, blank=True)
 	inside = models.BooleanField(default=True)
+	isopen = models.BooleanField(default=True)
+	child = models.FloatField(default=50)#costchild = cost*child/100
+	startaddress = models.CharField(max_length=100, default="Ho Chi Minh")
+	slot = models.IntegerField(default=5)
 	# def __str__(self):
 	# 	return self.name
 	def __str__(self):
@@ -68,7 +73,7 @@ class DetailTour(models.Model):
 	photo2 = ResizedImageField(upload_to=get_upload_file_name_tour_slider, size=[1024, 768])
 	photo3 = ResizedImageField(upload_to=get_upload_file_name_tour_slider, size=[1024, 768])
 	photo4 = ResizedImageField(upload_to=get_upload_file_name_tour_slider, size=[1024, 768])
-	detail = models.TextField(max_length=5000, default='Please describe your tour here')
+	detail = RichTextUploadingField(max_length=5000, default='Please describe your tour here')
 	programmer = models.TextField(max_length=1000, default='Please describe your programmer here')
 	local_highlight = models.TextField(max_length=1000, default='Please describe your local highlights here')
 	def save(self, *args, **kwargs):

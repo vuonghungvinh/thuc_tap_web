@@ -105,7 +105,9 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django_cleanup',
     'index',
+    'booking',
     'ckeditor',
+    'ckeditor_uploader'
 ]
 SITE_ID = 1
 MIDDLEWARE_CLASSES = [
@@ -166,6 +168,7 @@ WSGI_APPLICATION = 'travel.wsgi.application'
 # }
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_CONFIGS = {
     'awesome_ckeditor': {
         'toolbar': 'Basic',

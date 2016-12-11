@@ -4,15 +4,32 @@
 {% load humanize %}
 {% load staticfiles %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/myprofile.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datepicker.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
 {% endblock %}
 {% load templatetag %}
 {% block main %}
 	<div class="container" id="myprofile">
+		<h1>My Profile</h1>
 		<form method="POST" action='{{ action_url }}' class="post-form" enctype='multipart/form-data'>
 			{% csrf_token %}
 			{{ userf.media }}
 	        {{ userf.as_p }}
 	        {{ profilef.as_p }}
+	        <div class="button">
+	        	<button type="submit">Update Profile</button>
+	        </div>
 		</form>
 	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.datepicker').datepicker({
+				format: 'yyyy-mm-dd',
+				todayHighlight: true
+			});
+			if ($("#id_date").val().length < 1){
+				$('.datepicker').datepicker('setDate', new Date(1980, 1, 1));
+			}
+		});
+	</script>
 {% endblock %}

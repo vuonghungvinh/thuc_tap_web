@@ -21,9 +21,11 @@ import settings
 
 urlpatterns = [
     url(r'^', include("index.urls")),
-	url(r'^profile/', include("profile.urls")),
+    url(r'^profile/', include("profile.urls")),
+	url(r'^booking/', include("booking.urls")),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT,
         }),

@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django_resized import ResizedImageField
+from datetime import datetime
 import os
 import sys
 import re

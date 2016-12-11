@@ -13,12 +13,12 @@ class SliderAdmin(admin.ModelAdmin):
 	search_fields = ('title', 'isshow')
 
 class TourAdmin(admin.ModelAdmin):
-	list_display = ('name', 'photo', 'cost', 'days', 'is_sale', 'cost_sale', 'date', 'inside')
+	list_display = ('name', 'photo', 'cost', 'days', 'is_sale', 'cost_sale', 'date', 'inside', 'isopen', 'child', 'startaddress', 'slot')
 	list_filter = ('days', 'date')
 	search_fields = ('days', 'date')
 
 class DetailTourForm(forms.ModelForm):
-	detail = forms.CharField(widget=CKEditorWidget())
+	# detail = forms.CharField(widget=CKEditorWidget())
 	programmer = forms.CharField(widget=CKEditorWidget())
 	local_highlight = forms.CharField(widget=CKEditorWidget())
 	class Meta:

@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block top %}
+{% load static %}
+{% load humanize %}
+{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/stylebooking.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datepicker.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/booking.js' %}"></script>
+{% endblock %}
+{% load templatetag %}
+{% block main %}
+	<div class="siteDatTour">
+		<div class="container" id="booking">
+		<div class="datTour"><h1>Đặt Tour</h1></div>
+        <div class="tenTour"><h4> {{tour.name}} </h4></div>
+        <div class="ctTour">
+                <p>Mã Tour:NDSGN360-049-181116VJ</p>
+                <p>Thời gian: {{tour.days}} Ngày</p>
+                <p>Giá: {{tour.cost|intcomma}}₫</p>
+                <p>Ngày khởi hành: {{tour.date|date:"d/m/Y"}}</p>
+                <p>Nơi khởi hành: {{tour.startaddress}}</p>
+                <hr>
+        </div>
+        <div class="giaTour"> <h4>Giá tour cơ bản</h4></div>
+        <div class="ctGia">
+            <div class="table-responsive">
+                <table class="table .table-condensed" >
+                    <tr class="header">
+                        <td class="center"><strong>Loại khách</strong></td>
+                        <td class="center"><strong>Việt Nam</strong></td>
+                        <td class="center"><strong>Nước ngoài</strong></td>
+                    </tr> 
+                    <tr>
+                        <td>Người lớn (Từ 12 tuổi trở lên)</td>
+                        <td class="price center">{{tour.cost|intcomma}}<span>₫</span></td>
+                        <td class="price center">{{tour.cost|intcomma}}<span>₫</span></td>
+                    </tr>
+                    <tr>
+                        <td>Trẻ em (Dưới 12 Tuổi)</td>
+                        <td class="price center">{{ tour.cost|percentchild:tour.child|intcomma}}<span>₫</span></td>
+                        <td class="price center">{{ tour.cost|percentchild:tour.child|intcomma}}<span>₫</span></td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+        <hr>
+        <div class="thongTin"><h4>Thông tin liên hệ</h4></div>
+        <div class="bangTT">
+            <div class="row">
+                <form>
+                	<input type="hidden" name="slot" value="{{tour.slot}}" />
+                	<input type="hidden" name="id" value="{{tour.id}}" />
+                	<input type="hidden" name="percent" value="{{tour.child}}" />
+                	<input type="hidden" name="cost" value="{{tour.cost}}" />
+                	<input type="hidden" name="is_sale" value="{{tour.is_sale}}" />
+                	<input type="hidden" name="cost_sale" value="{{tour.cost_sale}}" />
+                    <div class="form-group">
+                        <label for="hoten" class="col-md-1 col-sm-1 control-label">Họ Tên(*)</label>
+                        <div class="col-md-5 col-sm-5">
+                            <input name="name_booking" value="{{request.user.first_name}} {{request.user.last_name}}" type="text" class="form-control" placeholder="Họ Tên">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="col-md-1 col-sm-1 control-label">Email</label>
+                        <div class="col-md-5 col-sm-5">
+                            <input type="email" name="email_booking" value="{{request.user.email}}" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <form>
+                    <div class="form-group">
+                        <label for="diachi" class="col-md-1 col-sm-1 control-label">Địa Chỉ(*)</label>
+                        <div class="col-md-5 col-sm-5">
+                            <input type="text" name="add_booking" value="{{request.user.profile_user.address}}" class="form-control" placeholder="Địa Chỉ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sdt" class="col-md-1 col-sm-1 control-label">Điện Thoại</label>
+                        <div class="col-md-5 col-sm-5">
+                            <input type="	" name="phone_booking" value="{{request.user.profile_user.phone}}" class="form-control" placeholder="Điện Thoại">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <form>
+
+                    <div class="form-group">
+                        <label for="ghichu" class="col-md-1 col-sm-1 control-label">Ghi Chú</label>
+                        <div class="col-md-5 col-sm-5">
+                            <input type="text" name="note_booking" class="form-control" placeholder="Ghi Chú">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nglon" class="col-md-1 col-sm-1 control-label">Người Lớn</label>
+                        <div class="col-md-1 col-sm-1">
+                            <input onchange="changeperson();" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" type="number" min="0" max="{{tour.slot}}" name="adult_booking" class="form-control" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="trenho" class="col-md-1 col-sm-1 control-label">Trẻ Nhỏ</label>
+                        <div class="col-md-1 col-sm-1">
+                            <input onchange="changeperson();" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" type="number" min="0" max="{{tour.slot}}" name="child_booking" class="form-control" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tskhach" class="col-md-1 col-sm-1 control-label">Tổng Số Khách</label>
+                        <div class="col-md-1 col-sm-1">
+                            <input type="text" name="total_customer" class="form-control" placeholder="0" readonly>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="dskh"><h4>Danh Sách Khách Hàng Đi Tour</h4></div>
+        <div class="bangDS">
+            <div class="table-responsive">
+                <table class="table table-condensed listcustomer">
+	                <thead>
+	                	<tr class="header">                            
+	                        <td class="center"><strong>Họ tên (<span class="price">*</span>)</strong></td>
+	                        <td class="center"><strong>Ngày sinh (<span class="price">*</span>)</strong></td>
+	                        <td class="center"><strong>Giới tính</strong></td>
+	                        <td class="center"><strong>Địa chỉ</strong></td>        
+	                        <td class="center"><strong>Loại khách</strong></td>
+	                        <td class="center"><strong>Trị giá</strong></td>
+	                    </tr> 
+	                </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tToan"><a href=""><button type="button" class="btn btn-primary">Thanh Toán</button></a></div>
+	</div>
+	</div>
+{% endblock %}
