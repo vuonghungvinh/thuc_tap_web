@@ -1,3 +1,6 @@
+body{
+    /*cursor: url(http://cur.cursors-4u.net/others/images6/oth543.gif), auto;*/
+}
 #header{
 	background-image: url(images/bg-hd2.png);
 	background-size: contain;
@@ -23,6 +26,7 @@
 	font-family: initial;
 	color: #FFCC00;
 	line-height: 33px;
+    font: normal 20px 'Cookie', cursive;
 	display: inline-block;
 }
 #right_Area{
@@ -36,6 +40,7 @@
 	color: #FFCC00;
 	margin-top:  10px;
 	padding-right: 10px;
+    font: normal 13px 'Cookie', cursive;
 }
 #right_Area .social{
 	list-style-type: none;
@@ -638,4 +643,11 @@ a:hover{
 
 .icon_user:hover{
     cursor: pointer;
+}
+
+.ngang{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 2px solid #a8cce8;
 }

@@ -15,11 +15,11 @@
 		<div class="datTour"><h1>Đặt Tour</h1></div>
         <div class="tenTour"><h4> {{tour.name}} </h4></div>
         <div class="ctTour">
-                <p>Mã Tour:NDSGN360-049-181116VJ</p>
                 <p>Thời gian: {{tour.days}} Ngày</p>
-                <p>Giá: {{tour.cost|intcomma}}₫</p>
+                <p>Giá: {{tour|percentadult|intcomma}}₫</p>
                 <p>Ngày khởi hành: {{tour.date|date:"d/m/Y"}}</p>
                 <p>Nơi khởi hành: {{tour.startaddress}}</p>
+                <p>Số lượng khách tối đa:: {{tour.slot}}</p>
                 <hr>
         </div>
         <div class="giaTour"> <h4>Giá tour cơ bản</h4></div>
@@ -33,13 +33,13 @@
                     </tr> 
                     <tr>
                         <td>Người lớn (Từ 12 tuổi trở lên)</td>
-                        <td class="price center">{{tour.cost|intcomma}}<span>₫</span></td>
-                        <td class="price center">{{tour.cost|intcomma}}<span>₫</span></td>
+                        <td class="price center">{{tour|percentadult|intcomma}}<span>₫</span></td>
+                        <td class="price center">{{tour|percentadult|intcomma}}<span>₫</span></td>
                     </tr>
                     <tr>
                         <td>Trẻ em (Dưới 12 Tuổi)</td>
-                        <td class="price center">{{ tour.cost|percentchild:tour.child|intcomma}}<span>₫</span></td>
-                        <td class="price center">{{ tour.cost|percentchild:tour.child|intcomma}}<span>₫</span></td>
+                        <td class="price center">{{ tour|percentchild|intcomma}}<span>₫</span></td>
+                        <td class="price center">{{ tour|percentchild|intcomma}}<span>₫</span></td>
                     </tr>
                 </table>
                 
@@ -50,6 +50,7 @@
         <div class="bangTT">
             <div class="row">
                 <form>
+                    {% csrf_token %}
                 	<input type="hidden" name="slot" value="{{tour.slot}}" />
                 	<input type="hidden" name="id" value="{{tour.id}}" />
                 	<input type="hidden" name="percent" value="{{tour.child}}" />
@@ -136,7 +137,7 @@
                 </table>
             </div>
         </div>
-        <div class="tToan"><a href=""><button type="button" class="btn btn-primary">Thanh Toán</button></a></div>
+        <div class="tToan"><a href="javascrip:void(0)"><button type="button" id="btnbooking" class="btn btn-primary">Thanh Toán</button></a></div>
 	</div>
 	</div>
 {% endblock %}

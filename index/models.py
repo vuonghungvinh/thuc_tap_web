@@ -73,7 +73,7 @@ class DetailTour(models.Model):
 	photo2 = ResizedImageField(upload_to=get_upload_file_name_tour_slider, size=[1024, 768])
 	photo3 = ResizedImageField(upload_to=get_upload_file_name_tour_slider, size=[1024, 768])
 	photo4 = ResizedImageField(upload_to=get_upload_file_name_tour_slider, size=[1024, 768])
-	detail = RichTextUploadingField(max_length=5000, default='Please describe your tour here')
+	detail = RichTextUploadingField(max_length=8000, default='Please describe your tour here')
 	programmer = models.TextField(max_length=1000, default='Please describe your programmer here')
 	local_highlight = models.TextField(max_length=1000, default='Please describe your local highlights here')
 	def save(self, *args, **kwargs):

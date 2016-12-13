@@ -20,5 +20,16 @@ def animate(value):
 		return 200
 
 @register.filter
-def percentchild(value, per):
-	return value*per/100
+def percentchild(value):
+	if value.is_sale:
+		cost = value.cost_sale
+	else:
+		cost = value.cost
+	return cost*value.child/100
+
+@register.filter
+def percentadult(value):
+	if value.is_sale:
+		return value.cost_sale
+	else:
+		return value.cost
