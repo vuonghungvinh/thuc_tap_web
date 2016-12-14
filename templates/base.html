@@ -72,9 +72,14 @@
 							    		<li class="leaf">
 							    			<div class="dropdown">
 							    				<span>{{request.user.first_name}} {{request.user.last_name}}</span>
-								    			<img class="icon_user" src="/media/{{request.user.profile_user.avatar}}">
+								    			{% if request.user.profile_user.avatar__length == 0 or request.user.profile_user.avatar == "" %}
+								    				<img class="icon_user" src="/media/avatar.png">
+								    			{% else %}
+								    				<img class="icon_user" src="/media/{{request.user.profile_user.avatar}}">
+								    			{% endif %}
 								    			<div class="dropdown-content">
 												    <a href="/profile" class="login-reveal-modal-button">My profile</a>
+												    <a href="/booking/mybooking" class="login-reveal-modal-button">My Booking</a>
 												    <a href="/accounts/logout/?next={{ request.path }}" class="login-reveal-modal-button">Logout</a>
 												</div>
 								    		</div>
