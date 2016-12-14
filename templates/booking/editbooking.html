@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block top %}
+{% load static %}
+{% load humanize %}
+{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/stylebooking.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datepicker.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/booking.js' %}"></script>
+{% endblock %}
+{% load templatetag %}
+{% block main %}
+	<div class="container" id="editbooking">
+        <h1>{{booking.tour.name}}</h1>
+        <form method="POST" action='{{ action_url }}' class="post-form" enctype='multipart/form-data'>
+            <input type="hidden" name="id" value="{{booking.id}}" />
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            {% if booking.status == 0 %}
+                <div class="button">
+                    <button type="submit">Update Tour</button>
+                    <a href="javascript:void(0)">Delete</a>
+                </div>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

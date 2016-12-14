@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block top %}
+{% load static %}
+{% load humanize %}
+{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/stylebooking.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datepicker.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/booking.js' %}"></script>
+{% endblock %}
+{% load templatetag %}
+{% block main %}
+	<div class="container" id="mybooking">
+        <h1>List Booking</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered  table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Booking id
+                        </th>
+                        <th>
+                            Tour
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Note
+                        </th>
+                        <th>
+                            Adult
+                        </th>
+                        <th>
+                            Children
+                        </th>
+                        <th>
+                            Total
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for b in booking %}
+                    <tr>
+                        <td title="{{transaction.transaction_id}}">
+                            <a href="/booking/edit/{{b.id}}">{{b.id}}</a>
+                        </td>
+                        <td>
+                            {{b.tour.name}}
+                        </td>
+                        <td>
+                            {{b.name}}
+                        </td>
+                        <td>
+                            {{b.email}}
+                        </td>
+                        <td>
+                            {{b.address}}
+                        </td>
+                        <td>
+                            {{b.phone}}
+                        </td>
+                        <td>
+                            {{b.note}}
+                        </td>
+                        <td>
+                            {{b.adult}}
+                        </td>
+                        <td>
+                            {{b.children}}
+                        </td>
+                        <td>
+                            {{b.total}}
+                        </td>
+                        <td>
+                            {% if b.status == 0 %}
+                                <p>pendding</p>
+                            {% elif b.status == 1 %}
+                                <p>accept</p>
+                            {% elif b.status == 2 %}
+                                <p>finished</p>
+                            {% else %}
+                                <p>canceled</p>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

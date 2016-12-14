@@ -15,8 +15,8 @@ class Booking(models.Model):
 	address = models.CharField(max_length=200)
 	phone = models.IntegerField(max_length=11)
 	note = models.CharField(max_length=200, default='')
-	adult = models.IntegerField(max_length=2)	
-	children = models.IntegerField(max_length=2)
+	adult = models.IntegerField()	
+	children = models.IntegerField(default=0)
 	total = models.FloatField(default=0)
 	status = models.IntegerField(choices=choice_status, default=0)
 

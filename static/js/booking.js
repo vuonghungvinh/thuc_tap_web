@@ -152,11 +152,26 @@ $(document).ready(function(){
 	        	if(datas['status']==0){
 	        		$.notify(datas['data'], "error");
 	        	} else {
-	        		$.notify(datas['data'], "success");
+	        		// $.notify(datas['data'], "success");
+	        		window.location.href = '/booking/edit/'+datas['data'];
 	        	}
 	        }, 
 	        error: function(datas){
 	        	console.log(datas);     
+	        }       
+	    });
+	});
+	$("#editbooking a").click(function(){
+		$.ajax({    
+	        type: "POST",
+	        url: '/booking/delete/'+$("#editbooking input[name='id']").val()+'/',
+	        data: {type: $(this).val(), csrfmiddlewaretoken: $('.fabtransaction input[name=csrfmiddlewaretoken]').val()},
+	        dataType: 'json',       
+	        success: function(datas){
+	        	window.location.href = '/booking/mybooking';
+	        }, 
+	        error: function(){
+	        	$.notify("Xoa khong thanh cong", "error");      
 	        }       
 	    });
 	});
